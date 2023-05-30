@@ -1,0 +1,10 @@
+$buttons:4;
+@for $i from 1 through $buttons {
+    .button:nth-child(#{$i}) {
+        background-color: $trans;
+        @include border (2px,solid,$white);
+        color: #fff;
+        border-radius: 5px;
+        padding: $pd-1 $pd-2;
+    }
+}
