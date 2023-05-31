@@ -43,41 +43,139 @@
           </a>
         </nav>
         <div class="optional d-block ml-auto">
-          <button class="button">Chuyển đến trang admin</button>
+          <select name="" id="select-type" onchange="getSameTypeProduct(this)">
+            <option value="">Chọn dòng điện thoại</option>
+            <option value="iphone">iPhone</option>
+            <option value="samsung">Samsung</option>
+          </select>
           <button class="button">
+            <a href="/admin/view/index.html" class="text-white"
+              >Chuyển đến trang admin</a
+            >
+          </button>
+          <!-- Nút giỏ hàng -->
+          <button
+            type="button"
+            class="btn btn-primary button"
+            data-toggle="modal"
+            data-target="#cart"
+            onclick="renderCart()"
+          >
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
+
+          <!-- Modal giỏ hàng -->
+          <div class="modal fade" id="cart" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body cart-body"></div>
+                <div class="modal-footer cart-footer">
+                  <span>Tổng tiền: 0$</span>
+                  <button
+                    type="button"
+                    onclick="handlePayEvent()"
+                    class="btn btn-primary"
+                  >
+                    Thanh toán
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
     <section class="content">
       <div class="container">
-        <div class="list-customer-item">
-          <div class="customer-item card">
-            <div class="item-img">
-              <img
-                class="img-fluid"
-                src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-midnight-green-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990073"
-                alt=""
-              />
+        <div class="list-customer-item row">
+          <div class="col-3">
+            <div class="item">
+              <div class="item-img">
+                <img
+                  class="img-fluid"
+                  src="https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="item-details">
+                <h6>Product name</h6>
+                <p>thông số sản phẩm</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <div class="item-option">
+                  <span>400$</span>
+                  <button>Add</button>
+                </div>
+              </div>
             </div>
-            <div class="item-details">
-              <div class="details-title">
-                <strong>Product name</strong>
-                <button class="button">
-                  <i class="fa-solid fa-heart"></i>
-                </button>
+          </div>
+          <div class="col-3">
+            <div class="item">
+              <div class="item-img">
+                <img
+                  class="img-fluid"
+                  src="https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg"
+                  alt=""
+                />
               </div>
-              <div class="details-wrapper mt-2">
-                <h6>Lorem ipsum dolor sit amet.</h6>
-                <p class="my-0">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, sint?
-                </p>
+              <div class="item-details">
+                <h6>Product name</h6>
+                <p>thông số sản phẩm</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <div class="item-option">
+                  <span>400$</span>
+                  <button>Add</button>
+                </div>
               </div>
-              <div class="details-footer">
-                <span>$400</span>
-                <button class="button">Add</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="item">
+              <div class="item-img">
+                <img
+                  class="img-fluid"
+                  src="https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="item-details">
+                <h6>Product name</h6>
+                <p>thông số sản phẩm</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <div class="item-option">
+                  <span>400$</span>
+                  <button>Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="item">
+              <div class="item-img">
+                <img
+                  class="img-fluid"
+                  src="https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="item-details">
+                <h6>Product name</h6>
+                <p>thông số sản phẩm</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <div class="item-option">
+                  <span>400$</span>
+                  <button>Add</button>
+                </div>
               </div>
             </div>
           </div>
@@ -103,5 +201,8 @@
     ></script>
     <!-- axios cdn   -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../controller/CartItem.js"></script>
+    <script src="../controller/Cart.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>
