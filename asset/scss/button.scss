@@ -2,9 +2,32 @@ $buttons:4;
 @for $i from 1 through $buttons {
     .button:nth-child(#{$i}) {
         background-color: $trans;
-        @include border (2px,solid,$white);
-        color: #fff;
+        @include border (2px,solid,$black-1);
+        color: $black-1;
         border-radius: 5px;
         padding: $pd-1 $pd-2;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+            background-color: #ccc;
+        }
     }
+}
+
+.deleted-button {
+    background-color: $trans;
+        @include border (2px,solid,$black-1);
+        color: $black-1;
+        border-radius: 5px;
+        padding: $pd-1 $pd-2;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+            background-color: $red;
+        }
+}
+#select-type {
+    padding:0 $pd-2;
+    border-radius: 5px;
+    @include border (2px,solid,$black-1);
 }

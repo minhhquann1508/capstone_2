@@ -35,151 +35,87 @@
   </head>
   <body>
     <header>
-      <div class="container d-flex justify-content-between align-items-center">
-        <nav class="navbar navbar-light d-block">
-          <a class="navbar-brand" href="#">
-            Logo
-            <!-- <img src="" width="30" height="30" alt="" /> -->
-          </a>
-        </nav>
-        <div class="optional d-block ml-auto">
-          <select name="" id="select-type" onchange="getSameTypeProduct(this)">
-            <option value="">Chọn dòng điện thoại</option>
-            <option value="iphone">iPhone</option>
-            <option value="samsung">Samsung</option>
-          </select>
-          <button class="button">
-            <a href="/admin/view/index.html" class="text-white"
-              >Chuyển đến trang admin</a
-            >
-          </button>
-          <!-- Nút giỏ hàng -->
+      <!-- start nav -->
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand text-dark font-weight-bolder" href="#">Samsung</a>
           <button
+            class="navbar-toggler"
             type="button"
-            class="btn btn-primary button"
-            data-toggle="modal"
-            data-target="#cart"
-            onclick="renderCart()"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="navbar-toggler-icon"
+              ><i class="fa-solid fa-bars"></i
+            ></span>
           </button>
-
-          <!-- Modal giỏ hàng -->
-          <div class="modal fade" id="cart" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body cart-body"></div>
-                <div class="modal-footer cart-footer">
-                  <span>Tổng tiền: 0$</span>
-                  <button
-                    type="button"
-                    onclick="handlePayEvent()"
-                    class="btn btn-primary"
-                  >
-                    Thanh toán
-                  </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav cart-optional">
+              <select
+                name=""
+                id="select-type"
+                class="text-center"
+                onchange="getSameTypeProduct(this)"
+              >
+                <option value="">Chọn dòng sản phẩm</option>
+                <option value="iphone">iPhone</option>
+                <option value="samsung">Samsung</option>
+              </select>
+              <button class="button admin-btn">
+                <a href="/admin/view/index.html" class="text-dark">Chuyển đến trang admin</a>
+              </button>
+              <button
+              type="button"
+              class="btn btn-primary button cart-button"
+              data-toggle="modal"
+              data-target="#cart"
+              onclick="renderCart()"
+              >
+            <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+              <div class="modal fade" id="cart" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body cart-body"></div>
+                    <div class="modal-footer cart-footer">
+                      <span>Tổng tiền: 0$</span>
+                      <button
+                        type="button"
+                        onclick="handlePayEvent()"
+                        class="btn btn-primary"
+                      >
+                        Thanh toán
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+            </div>
+          </div>
+        </nav>
       </div>
+      <!-- end nav -->
     </header>
     <section class="content">
       <div class="container">
-        <div class="list-customer-item row">
-          <div class="col-3">
-            <div class="item">
-              <div class="item-img">
-                <img
-                  class="img-fluid"
-                  src="https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="item-details">
-                <h6>Product name</h6>
-                <p>thông số sản phẩm</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                <div class="item-option">
-                  <span>400$</span>
-                  <button>Add</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item">
-              <div class="item-img">
-                <img
-                  class="img-fluid"
-                  src="https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="item-details">
-                <h6>Product name</h6>
-                <p>thông số sản phẩm</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                <div class="item-option">
-                  <span>400$</span>
-                  <button>Add</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item">
-              <div class="item-img">
-                <img
-                  class="img-fluid"
-                  src="https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="item-details">
-                <h6>Product name</h6>
-                <p>thông số sản phẩm</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                <div class="item-option">
-                  <span>400$</span>
-                  <button>Add</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item">
-              <div class="item-img">
-                <img
-                  class="img-fluid"
-                  src="https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="item-details">
-                <h6>Product name</h6>
-                <p>thông số sản phẩm</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                <div class="item-option">
-                  <span>400$</span>
-                  <button>Add</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h3 class="text-center my-4">Sản phẩm nổi bật</h3>
+        <div class="list-customer-item row my-3"></div>
       </div>
     </section>
     <!-- Optional JavaScript -->
@@ -203,6 +139,9 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../controller/CartItem.js"></script>
     <script src="../controller/Cart.js"></script>
+    <script src="../service/data.js"></script>
+    <script src="../service/handleEvent.js"></script>
+    <script src="../service/render.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>
