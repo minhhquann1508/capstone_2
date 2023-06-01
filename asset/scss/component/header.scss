@@ -1,0 +1,10 @@
+header {
+    @include box-shadow(0.4);
+    padding: $pd-3 0;
+    .cart-optional {
+        padding: $pd-2 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

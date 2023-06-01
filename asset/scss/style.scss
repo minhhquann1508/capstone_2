@@ -1,6 +1,8 @@
 @import "./variable.scss";
 @import "./mixin.scss";
-@import "./button.scss";
+@import "../scss/component/button.scss";
+@import "../scss/component/header.scss";
+@import "../scss/component/content.scss";
 @import "./responsive.scss";
 *{
     font-family: 'Source Serif Pro', serif;
@@ -11,77 +13,5 @@ body{
     left: 0;
     margin: 0;
 }
-header {
-    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
-    padding: $pd-3 0;
-}
 
 
-.content {
-    // position: absolute;
-    width: 100%;
-    // left: 50%;
-    // top: 50%;
-    // transform: translate(-50%,-50%);
-}
-.optional {
-    gap: 20px;
-}
-.item {
-    box-shadow: 0 1px 6px rgba(0,0,0,0.4);
-    overflow: hidden;
-    min-height: 450px;
-    position: relative;
-    background-color: #f4f4f4;
-    color: $black-1;
-}
-.item-details {
-    padding: 0 $pd-3;
-}
-.item-option {
-    position: absolute;
-    padding:0 $pd-3;
-    bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-}
-.modal-content {
-    background-color: $white;
-    color: $black-1;
-}
-.cart-item {
-    gap: 30px;
-    background-color: #f4f4f4;
-    margin: $mg-3 0;
-    padding:$pd-3;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.4);
-}
-.item-title {
-    font-size: 18px;
-    font-weight: 600;
-    padding: $pd-2 0;
-    cursor: pointer;
-    transition: 0.2s ease-in;
-}
-.item-title:hover {
-    color: $red;
-    text-decoration: underline;
-}
-.item-desc {
-    font-size: 15px;
-}
-.item-quantity {
-    border: 2px solid black;
-    padding: 3px 0;
-    border-radius: 3px;
-    margin:0 4px;
-    text-align: center;
-}
-.cart-optional {
-    padding: $pd-2 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}

@@ -1,0 +1,58 @@
+.content {
+    width: 100%;
+    .optional {
+        gap: 20px;
+    }
+    .item {
+        @include box-shadow(0.4);
+        overflow: hidden;
+        min-height: 450px;
+        position: relative;
+        background-color: $white-2;
+        color: $black-1;
+    }
+    .item-details {
+        padding: 0 $pd-3;
+    }
+    .item-option {
+        position: absolute;
+        padding:0 $pd-3;
+        bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+    }
+    .modal-content {
+        background-color: $white;
+        color: $black-1;
+    }
+    .cart-item {
+        gap: 30px;
+        background-color: $white-2;
+        margin: $mg-3 0;
+        padding:$pd-3;
+        @include box-shadow(0.4);
+    }
+    .item-title {
+        font-size: 18px;
+        font-weight: 600;
+        padding: $pd-2 0;
+        cursor: pointer;
+        transition: 0.2s ease-in;
+    }
+    .item-title:hover {
+        color: $red;
+        text-decoration: underline;
+    }
+    .item-desc {
+        font-size: 15px;
+    }
+    .item-quantity {
+        @include border (2px,solid,$black-1);
+        padding: 3px 0;
+        border-radius: 3px;
+        margin:0 4px;
+        text-align: center;
+    }
+}
