@@ -27,13 +27,6 @@
         background-color: $white;
         color: $black-1;
     }
-    .cart-item {
-        gap: 30px;
-        background-color: $white-2;
-        margin: $mg-3 0;
-        padding:$pd-3;
-        @include box-shadow(0.4);
-    }
     .item-title {
         font-size: 18px;
         font-weight: 600;
@@ -55,4 +48,12 @@
         margin:0 4px;
         text-align: center;
     }
+}
+.cart-item {
+    display: flex;
+    gap: 30px;
+    background-color: $white-2;
+    margin: $mg-3 0;
+    padding:$pd-3;
+    @include box-shadow(0.4);
 }

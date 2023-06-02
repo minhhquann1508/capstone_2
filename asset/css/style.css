@@ -95,7 +95,7 @@
 
 header {
   position: fixed;
-  z-index: 999;
+  z-index: 99999;
   width: 100%;
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
@@ -148,12 +148,6 @@ header {
   .content .modal-content {
     background-color: #fff;
     color: #000; }
-  .content .cart-item {
-    gap: 30px;
-    background-color: #f4f4f4;
-    margin: 20px 0;
-    padding: 12px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); }
   .content .item-title {
     font-size: 18px;
     font-weight: 600;
@@ -171,6 +165,14 @@ header {
     border-radius: 3px;
     margin: 0 4px;
     text-align: center; }
+
+.cart-item {
+  display: flex;
+  gap: 30px;
+  background-color: #f4f4f4;
+  margin: 20px 0;
+  padding: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); }
 
 @media screen and (min-width: 767px) and (max-width: 992px) {
   .item {
