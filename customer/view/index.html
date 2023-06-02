@@ -112,12 +112,34 @@
       </div>
       <!-- end nav -->
     </header>
+    <section class="carousel">
+        <div id="my-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/asset/img/carousel-1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="/asset/img/carousel-2.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#my-carousel" data-slide="prev">
+            <i class="fa-solid fa-angle-left"></i>
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#my-carousel" data-slide="next">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </div>
+    </section>
     <section class="content">
       <div class="container">
         <h3 class="text-center my-4">Sản phẩm nổi bật</h3>
+        <div class="loading">
+          <div class="loading-icon"></div>
+        </div>
         <div class="list-customer-item row my-3"></div>
       </div>
     </section>
+    <button class="back-top-top-btn" onclick="handleBackToTopEvent()"><i class="fa-solid fa-arrow-up"></i></button>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script

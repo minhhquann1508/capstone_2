@@ -1,10 +1,13 @@
 @import "./variable.scss";
 @import "./mixin.scss";
+@import "./component/loading.scss";
 @import "../scss/component/button.scss";
 @import "../scss/component/header.scss";
+@import "../scss/component/carousel.scss";
 @import "../scss/component/content.scss";
 @import "./responsive.scss";
 *{
+    scroll-behavior: smooth;
     font-family: 'Source Serif Pro', serif;
 }
 body{

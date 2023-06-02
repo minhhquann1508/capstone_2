@@ -41,7 +41,28 @@ const updateTotalPrice = (id) => {
 
 //Xóa sản phẩm khỏi giỏ hàng
 const deleteCartItem = (id) => {
-    cart.deleteCartItem(id);
-    saveData();
-    renderCart();
+    if(confirm("Bạn có chắc muốn xóa sản phẩm này không ?")) {
+        cart.deleteCartItem(id);
+        saveData();
+        renderCart();
+    }
+    else {
+        return;
+    }
+}
+
+//Lăn chuột xuông thì hiện số pixel đã cuộn;
+window.onscroll = () => {
+    let scrollPixels = window.pageYOffset || document.documentElement.scrollTop;
+    if(scrollPixels >= 100) {
+        document.querySelector('.back-top-top-btn').style.display = 'block';
+    }
+    else {
+        document.querySelector('.back-top-top-btn').style.display = 'none';
+    }
+}
+
+const handleBackToTopEvent = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }

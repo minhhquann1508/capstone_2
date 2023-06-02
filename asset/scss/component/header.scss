@@ -1,4 +1,8 @@
 header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    background-color: $white;
     @include box-shadow(0.4);
     padding: $pd-3 0;
     .cart-optional {

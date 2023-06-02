@@ -1,6 +1,6 @@
 const url = `https://6471e5116a9370d5a41acc1a.mockapi.io/api/product`;
 //giỏ hàng
-let cart = new Cart
+let cart = new Cart ()
 //Lấy dữ liệu từ Api 
 const fetchData = async () => {
     try {
@@ -24,3 +24,4 @@ window.addEventListener("DOMContentLoaded", function () {
     })
 })
 getData();
+

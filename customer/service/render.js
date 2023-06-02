@@ -28,6 +28,7 @@ const renderProductList = (list = []) => {
         `
     })
     document.querySelector('.list-customer-item').innerHTML = htmls.join('')
+    document.querySelector('.loading-icon').style.display = 'none'; 
 }
 //render Cart 
 const renderCart = () => {
