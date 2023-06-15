@@ -1,3 +1,38 @@
+.client-body {
+  margin: 0;
+  padding: 0;
+  left: 0;
+  background-color: #edf6f9; }
+
+.client-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.client-content .switch-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  border-radius: 20px;
+  height: 200px;
+  padding: 30px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+  margin: 20px 0; }
+.client-content i {
+  font-size: 40px;
+  margin: 10px 0; }
+.client-content a {
+  color: black;
+  font-size: 20px; }
+.client-content :hover {
+  transform: translateY(-2px); }
+
 .loading {
   display: flex;
   justify-content: center; }
