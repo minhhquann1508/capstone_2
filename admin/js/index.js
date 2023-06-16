@@ -86,7 +86,6 @@ $('#exampleModal').on('hide.bs.modal', function (e) {
     modal.reset();
 })
 
-
 //Click button ThemSP
 getEle("btnThemSP").addEventListener("click", function () {
     let btnAddPhone = "<button class='btn btn-success' onclick='themSP()'>Add</button>";
@@ -166,5 +165,3 @@ getEle("txtSearch").addEventListener("keyup", function () {
 
     renderPhoneList(phoneTimKiem);
 });
-
-

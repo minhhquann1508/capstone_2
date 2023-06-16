@@ -28,11 +28,11 @@ const renderProductList = (list = []) => {
         `
     })
     document.querySelector('.list-customer-item').innerHTML = htmls.join('')
-    document.querySelector('.loading-icon').style.display = 'none'; 
+    document.querySelector('.loading-icon').style.display = 'none';
 }
 //render Cart 
 const renderCart = () => {
-    if(cart.list.length <= 0) {
+    if (cart.list.length <= 0) {
         document.querySelector('.cart-body').innerHTML = 'Không có sản phẩm trong giỏ hàng.'
         document.querySelector('.cart-footer span').innerHTML = 'Tổng tiền :0$'
     }

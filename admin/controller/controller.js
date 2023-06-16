@@ -58,11 +58,7 @@ function layThongTin(isAdd) {
     isValid &= validation.kiemTraType("type", "errorType", "(*) Vui lòng chọn loại điện thoại");
     isValid &= validation.kiemTraRong(desc, "errorDesc", "(*) Vui lòng nhập giá điện thoại");
 
-
-
-
     if (!isValid) return null;
-
 
     let phone = new Phone(id, name, price, img, frontCamera, backCamera, screen, type, desc);
     return phone;
