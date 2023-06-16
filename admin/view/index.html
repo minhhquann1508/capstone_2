@@ -1,57 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Admin</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- font awe -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- gg font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;700&family=Merriweather:wght@300;400;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <!-- file css -->
-    <link rel="stylesheet" href="/asset/css/style.css" />
-  </head>
-  <body>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <!-- axios cdn   -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  </body>
+
+<head>
+  <title>Admin</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- font awe -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- gg font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;700&family=Merriweather:wght@300;400;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,600&display=swap"
+    rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <!-- file css -->
+  <link rel="stylesheet" href="./../../asset/css/style.css" />
+  <link rel="stylesheet" href="./../../asset/scss/style.scss" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand text-dark font-weight-bolder" href="#">Samsung</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav cart-optional">
+            <select name="" id="select-type" class="text-center" onchange="typePhone(value)">
+              <option value="0">Chọn dòng sản phẩm</option>
+              <option value="1">iPhone</option>
+              <option value="2">Samsung</option>
+            </select>
+            <button class="button admin-btn ml-3">
+              <a href="./../../customer/view/index.html" class="text-dark">Store</a>
+            </button>
+          </div>
+        </div>
+        <div>
+          <button id="btnThemSP" type="button" class="btn btn-primary cart-btn admin-btn" data-toggle="modal"
+            data-target="#exampleModal">
+            Thêm sản phẩm
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Body -->
+  <div class="body-wapper">
+    <section class="content">
+      <div class="container">
+        <div>
+          <p>Danh Sách Sản Phẩm</p>
+          <select name="" id="" class="text-center" onchange="sapXep(value)">
+            <option value="0">Sắp xếp</option>
+            <option value="1">Giá tăng dần</option>
+            <option value="2">Giá giảm dần</option>
+          </select>
+          <input type="text" id="txtSearch" placeholder="Tìm sản phẩm" />
+        </div>
+
+
+
+        <table class="table my-2">
+          <thead>
+            <tr class="">
+              <th scope="col">ID</th>
+              <th scope="col">Tên SP</th>
+              <th scope="col">Giá</th>
+              <th scope="col">Hình ảnh</th>
+              <th scope="col">Cam trước</th>
+              <th scope="col">Cam sau</th>
+              <th scope="col">Màn hình</th>
+              <th scope="col">Loại</th>
+              <th scope="col">Mô tả</th>
+              <th scope="col"><i class="fa-solid fa-gear"></i></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content mt-5">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Phone Managenment
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" id="formPhone">
+            <div class="form-group">
+              <input style="display: none;" type="text" class="form-control" id="txtID" />
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="txtName" placeholder="Nhập vào tên sản phẩm" />
+              <div id="errorName" class="text-danger" style="display: block;"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="txtPrice" placeholder="Nhập vào giá" />
+              <div id="errorPrice" class="text-danger" style="display: block;"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="txtImg" placeholder="Nhập vào hình ảnh của sản phẩm" />
+              <div id="errorImg" class="text-danger" style="display: block;"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="frontCamera" placeholder="Nhập vào thông tin camera trước" />
+              <div id="errorFrontCamera" class="text-danger" style="display: block;"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="backCamera" placeholder="Nhập vào thông tin camera sau" />
+              <div id="errorBackCamera" class="text-danger" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="screen" placeholder="Nhập vào thông tin màn hình sản phẩm" />
+              <div id="errorScreen" class="text-danger" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+              <select name="" id="type" class="form-control">
+                <option value="">Chọn loại điện thoại</option>
+                <option value="iphone">iPhone</option>
+                <option value="samsung">Samsung</option>
+              </select>
+              <div id="errorType" class="text-danger" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="txtDesc" placeholder="Nhập vào mô tả sản phẩm" />
+              <div id="errorDesc" class="text-danger" style="display: none;"></div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div class="btnClear"></div>
+          <div class="btnAdd"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- axios cdn   -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+  <script src="./../models/validation.js"></script>
+  <script src="./../models/product.js"></script>
+  <script src="./../controller/controller.js"></script>
+  <script src="./../service/api.js"></script>
+  <script src="./../js/index.js"></script>
+</body>
+
 </html>
